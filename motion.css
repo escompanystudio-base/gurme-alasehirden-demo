@@ -3152,3 +3152,31 @@ html.co-lock, html.co-lock body { overflow: hidden; }
   .pf-hero.is-new, .pf-hero.is-new .st-art, .pf-hero.is-new .st-art svg, .st-art.is-new, .pf-hero-tag { animation: none !important; }
 }
 .pf-hero-tag { display: table; margin-bottom: .3rem; } .pf-hero strong { display: block; }
+
+/* =================== Order confirmation: centred, two columns on wide screens =================== */
+.checkout-done { display: grid; justify-items: center; }
+.done-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.4rem; width: 100%; max-width: 1080px; justify-items: stretch; animation: rise .6s var(--out) both; }
+.done-card > .done-main, .done-card > .done-side { animation: none; }
+.done-main { display: grid; justify-items: start; align-content: start; gap: .7rem; min-width: 0; }
+.done-side { display: grid; align-content: start; gap: .8rem; min-width: 0; }
+.done-main > *, .done-side > * { animation: rise .6s var(--out) both; }
+.done-main > :nth-child(2) { animation-delay: .5s; } .done-main > :nth-child(3) { animation-delay: .58s; }
+.done-main > :nth-child(4) { animation-delay: .66s; } .done-main > :nth-child(5) { animation-delay: .74s; }
+.done-main > :nth-child(6) { animation-delay: .82s; } .done-main > :nth-child(7) { animation-delay: .9s; }
+.done-side > :nth-child(1) { animation-delay: .7s; } .done-side > :nth-child(2) { animation-delay: .8s; }
+.done-side > :nth-child(3) { animation-delay: .9s; } .done-side > :nth-child(4) { animation-delay: 1s; }
+.done-main > .done-badge { animation: pdp-pop .6s var(--spring) both !important; }
+.done-side-title { color: var(--ink); font: 700 1.05rem/1.2 var(--sans); }
+.done-side .done-facts { margin-top: 0; }
+.done-side .done-actions { display: grid; grid-template-columns: 1fr; margin-top: .3rem; }
+.done-side .done-actions .button, .done-side .done-account .button { width: 100%; }
+.done-side .done-account { display: block; }
+body.is-order-done .checkout-head { text-align: center; }
+body.is-order-done .checkout-head h1 { margin-inline: auto; }
+body.is-order-done .demo-banner, body.is-order-done .checkout-head .co-demo { margin-inline: auto; }
+@media (min-width: 960px) {
+  .done-card { grid-template-columns: minmax(0, 1.25fr) minmax(300px, .85fr); gap: 0; padding: clamp(1.8rem, 3vw, 2.8rem); }
+  .done-main { padding-right: clamp(1.6rem, 3vw, 3rem); }
+  .done-side { padding-left: clamp(1.6rem, 3vw, 3rem); border-left: 1px solid var(--line); }
+}
+@media (prefers-reduced-motion: reduce) { .done-main > *, .done-side > * { animation: none !important; } }

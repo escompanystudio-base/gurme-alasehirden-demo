@@ -233,7 +233,7 @@
       'Siparişiniz oluşturuldu'
     ];
     const ov = document.createElement('div');
-    ov.className = `co-proc co-proc-${method}`;
+    ov.className = `co-proc is-${method}`;
     ov.setAttribute('role', 'alertdialog');
     ov.setAttribute('aria-modal', 'true');
     ov.setAttribute('aria-labelledby', 'co-proc-title');
@@ -345,6 +345,7 @@
         : 'Kapıda ödeme';
     done.innerHTML = `
       <div class="done-card">
+        <div class="done-main">
         <div class="done-badge${order.payment.method === 'transfer' ? ' is-pending' : ''}" aria-hidden="true"><span class="done-burst"></span><svg class="done-check" viewBox="0 0 52 52"><circle class="done-fill" cx="26" cy="26" r="24"/><circle cx="26" cy="26" r="24"/><path d="m15 27 7 7 15-16"/></svg></div>
         <p class="done-lead">Teşekkürler, ${esc(order.name.split(' ')[0])}.</p>
         <p class="done-kind done-kind-${order.payment.method}">${DONE_KIND[order.payment.method]}</p>
@@ -352,6 +353,9 @@
         <p class="done-text">Siparişinizi aldık. Bu bir demo sipariştir; ürün gönderilmez ve ödeme alınmaz.</p>
         ${doneTrack(order.payment.method)}
         ${doneScene(order)}
+        </div>
+        <aside class="done-side" aria-label="Sipariş özeti">
+        <h2 class="done-side-title">Sipariş özeti</h2>
         <dl class="done-facts">
           <div><dt>Teslimat</dt><dd>${esc(order.address.fullName)}<br>${esc(order.address.line)}<br>${esc(order.address.district)} / ${esc(order.address.city)}</dd></div>
           <div><dt>Ödeme</dt><dd>${pay}</dd></div>
@@ -362,7 +366,9 @@
           <span class="done-account">${doneAccountButton(member)}</span>
           <a class="button button-secondary" href="index.html#urunler">Alışverişe dön</a>
         </div>
+        </aside>
       </div>`;
+    document.body.classList.add('is-order-done');
     done.hidden = false;
     scrollTo({ top: 0, behavior: smooth() });
     done.querySelector('.scene-copy')?.addEventListener('click', async (e) => {
