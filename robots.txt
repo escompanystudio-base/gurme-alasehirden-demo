@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Alan adı belli olunca sitemap satırını ekleyin:
+# Sitemap: https://ALAN-ADINIZ/sitemap.xml

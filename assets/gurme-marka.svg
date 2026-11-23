@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>Gurme Alaşehirden</title>
+  <path fill="#28643a" d="M32 2c8 5 17 7 25 9v22c0 13-9 23-25 29C16 56 7 46 7 33V11c8-2 17-4 25-9Z"/>
+  <path d="M32 26c-1-5.5 1.8-11.5 7.4-14M31.4 23.4c-4.2-5.9-10.5-6-15.2-5.5 1.9 5.8 7.6 8.7 14.4 7.5" fill="none" stroke="#fffdf5" stroke-width="2.45" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#fffdf5">
+    <circle cx="23" cy="33" r="3.65"/><circle cx="32" cy="33" r="3.65"/><circle cx="41" cy="33" r="3.65"/>
+    <circle cx="27.5" cy="41" r="3.65"/><circle cx="36.5" cy="41" r="3.65"/>
+    <circle cx="32" cy="49" r="3.65"/>
+  </g>
+</svg>
